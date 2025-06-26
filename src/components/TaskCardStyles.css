@@ -1,0 +1,32 @@
+.task-card {
+  background-color: #b9d6f2;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+}
+
+.task-card h2,
+.task-card p {
+  color: #000;
+}
+
+.task-card.completed {
+  opacity: 0.5;
+}
+
+.task-card.incomplete {
+  opacity: 1;
+}
+
+.task-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-card-header p {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}

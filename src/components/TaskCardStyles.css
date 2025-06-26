@@ -30,3 +30,8 @@
   margin-left: 1rem;
   cursor: pointer;
 }
+
+.task-card-header-buttons {
+  display: flex;
+  gap: 0.3rem;
+}

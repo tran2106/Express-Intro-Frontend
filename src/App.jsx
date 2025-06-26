@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import axios from "axios";
 import "./AppStyles.css";
 import TaskList from "./components/TaskList";
+import AddTask from "./components/AddTask";
 import NavBar from "./components/NavBar";
 
 const App = () => {
@@ -28,9 +29,21 @@ const App = () => {
         navBarSetting={navBarSetting}
         setNavBarSetting={setNavBarSetting}
       />
-      <div className="app">
-        <TaskList tasks={tasks} fetchAllTasks={fetchAllTasks} />
-      </div>
+      {navBarSetting === "Add Task" && (
+        <AddTask
+          fetchAllTasks={fetchAllTasks}
+          setNavBarSetting={setNavBarSetting}
+        />
+      )}
+      {navBarSetting !== "Add Task" && (
+        <div className="app">
+          <TaskList
+            tasks={tasks}
+            fetchAllTasks={fetchAllTasks}
+            navBarSetting={navBarSetting}
+          />
+        </div>
+      )}
     </div>
   );
 };

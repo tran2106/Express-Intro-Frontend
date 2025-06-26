@@ -1,0 +1,35 @@
+.add-task-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.add-task-container h1 {
+  margin-bottom: 20px;
+}
+
+.add-task-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-task-form input,
+.add-task-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-task-form button {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #003559;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

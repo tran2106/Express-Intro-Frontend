@@ -14,15 +14,27 @@ const TaskCard = ({ task, fetchAllTasks }) => {
     }
   };
 
+  const handleDeleteTask = async () => {
+    try {
+      await axios.delete(`http://localhost:8080/api/tasks/${task.id}`);
+      fetchAllTasks();
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
+  };
+
   return (
     <div className={`task-card ${task.completed ? "completed" : "incomplete"}`}>
       <div className="task-card-header">
         <h2>{task.title}</h2>
-        {task.completed ? (
-          <p onClick={handleCompleteTask}>🔄</p>
-        ) : (
-          <p onClick={handleCompleteTask}>✅</p>
-        )}
+        <div className="task-card-header-buttons">
+          {task.completed ? (
+            <p onClick={handleCompleteTask}>🔄</p>
+          ) : (
+            <p onClick={handleCompleteTask}>✅</p>
+          )}
+          <p onClick={handleDeleteTask}>🗑️</p>
+        </div>
       </div>
       <p>{task.description}</p>
     </div>
